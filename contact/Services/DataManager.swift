@@ -7,6 +7,8 @@
 
 class DataManager {
 
+    static let shared = DataManager()
+
     let names = [
         "Sergey",
         "Andrey",
@@ -16,7 +18,7 @@ class DataManager {
         "Tom",
         "Vegas",
         "Tomas"
-    ].shuffled()
+    ]
 
     let surname = [
         "Ivanov",
@@ -27,7 +29,7 @@ class DataManager {
         "Johnson",
         "Davies",
         "Carlas"
-    ].shuffled()
+    ]
 
     let telephone = [
         "43454536",
@@ -38,7 +40,7 @@ class DataManager {
         "52323223",
         "78594724",
         "13566432"
-    ].shuffled()
+    ]
 
     let emails = [
         "www.ivanov@mail.ru",
@@ -49,5 +51,5 @@ class DataManager {
         "www.johnson@mail.ru",
         "www.davies@mail.ru",
         "www.carlas@mail.ru"
-    ].shuffled()
+    ]
 }

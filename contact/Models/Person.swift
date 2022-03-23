@@ -17,16 +17,24 @@ struct Person {
         "\(name) \(surname)"
     }
 
-    static func getPerson(index: Int, dataManager: DataManager) -> Person {
-        Person(
-            name: dataManager.names[index],
-            surname: dataManager.surname[index],
-            phoneNumber: dataManager.telephone[index],
-            email: dataManager.emails[index]
-        )
-    }
+    static func getPerson() -> [Person] {
+        var persons: [Person] = []
 
-    static func getInfo(index: Int, dataManager: DataManager) -> String {
-        "\(dataManager.names[index]) \(dataManager.surname[index])"
+        let names = DataManager.shared.names.shuffled()
+        let surnames = DataManager.shared.surname.shuffled()
+        let phoneNumbers = DataManager.shared.telephone.shuffled()
+        let emails = DataManager.shared.emails.shuffled()
+
+        for index in 0..<names.count {
+            let person = Person(
+                name: names[index],
+                surname: surnames[index],
+                phoneNumber: phoneNumbers[index],
+                email: emails[index]
+            )
+            persons.append(person)
+        }
+
+        return persons
     }
 }

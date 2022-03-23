@@ -9,9 +9,9 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var infoLabel: UILabel!
-    @IBOutlet weak var phoneLabel: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet private weak var infoLabel: UILabel!
+    @IBOutlet private weak var phoneLabel: UILabel!
+    @IBOutlet private weak var emailLabel: UILabel!
 
     var info = ""
     var phone = ""

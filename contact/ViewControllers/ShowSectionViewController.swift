@@ -9,13 +9,13 @@ import UIKit
 
 class ShowSectionViewController: UIViewController {
 
-    var dataManager: DataManager!
+    var person: [Person] = []
 }
 
 extension ShowSectionViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-       8
+        person.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -24,7 +24,7 @@ extension ShowSectionViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(ShowSectionTableViewCell.self, for: indexPath)
-        cell?.configure(person: Person.getPerson(index: indexPath.section, dataManager: dataManager))
+        cell?.configure(person: person, index: indexPath.section)
         return cell ?? UITableViewCell()
     }
 }
@@ -37,6 +37,6 @@ extension ShowSectionViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        Person.getInfo(index: section, dataManager: dataManager)
+        person[section].fullName
     }
 }

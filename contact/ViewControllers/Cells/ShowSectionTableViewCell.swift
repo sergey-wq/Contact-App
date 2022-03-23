@@ -9,11 +9,11 @@ import UIKit
 
 class ShowSectionTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var phoneLabel: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet private weak var phoneLabel: UILabel!
+    @IBOutlet private weak var emailLabel: UILabel!
     
-    func configure(person: Person) {
-        phoneLabel.text = person.phoneNumber
-        emailLabel.text = person.email
+    func configure(person: [Person], index: Int) {
+        phoneLabel.text = person[index].phoneNumber
+        emailLabel.text = person[index].email
     }
 }

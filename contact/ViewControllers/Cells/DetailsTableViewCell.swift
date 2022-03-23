@@ -11,7 +11,7 @@ class DetailsTableViewCell: UITableViewCell {
 
     @IBOutlet private weak var infoLabel: UILabel!
 
-    func configure(person: Person) {
-        infoLabel.text = person.fullName
+    func configure(person: [Person], index: Int) {
+        infoLabel.text = person[index].fullName
     }
 }
